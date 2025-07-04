@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Charles A</title>
+  <link rel="stylesheet" href="css/stylee.css" />
+  <style>
+    .project-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* center image and content */
+      text-align: left;
+      cursor: pointer;
+      width: 300px;
+      margin: auto;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-image {
+      width: 300px;
+      /* Fixed width */
+      height: 180px;
+      /* Fixed height */
+      background-size: cover;
+      background-position: center;
+      border-bottom: 1px solid #eee;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Background Animation -->
+  <div class="bg-animation"></div>
+
+  <header>
+    <nav>
+      <h1>Charles A</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="about-section">
+      <img src="images/IMG-20250604-WA0002.jpg" class="profile-img scroll-reveal" alt="Charles A" />
+
+      <h2 class="animated-heading scroll-reveal">About Me</h2>
+      <p class="fade-in scroll-reveal">
+        Hello! I'm Charles A, a BCA student and aspiring web developer with a strong interest in Python development and
+        data science. My first web project was a TNEA (Tamil Nadu Engineering Admissions) clone, built to replicate
+        real-world admission workflows. I’ve also developed a project using Flask and am currently working with Django
+        to build dynamic web applications. My earlier projects include a Rock-Paper-Scissors game and a House Price
+        Prediction model, where I used Seaborn and Excel for data visualization.
+      </p>
+
+      <h3 class="animated-heading scroll-reveal">My Skills</h3>
+      <ul class="skills-list scroll-reveal">
+        <li style="--i:1">Python</li>
+        <li style="--i:2">SQL</li>
+        <li style="--i:3">Django</li>
+        <li style="--i:4">HTML & CSS</li>
+        <li style="--i:5">Data Visualization</li>
+        <li style="--i:6">Git & GitHub</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Charles A</p>
+  </footer>
+
+  <!-- JavaScript: Background & Scroll Reveal  https://charles19a.github.io/charles_portfolio.github.io/index.html -->
+  <script>
+    // Cursor-based background animation
+    document.addEventListener('mousemove', (e) => {
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+      const bg = document.querySelector('.bg-animation');
+      bg.style.backgroundPosition = `${x * 100}% ${y * 100}%`;
+    });
+
+    // Scroll-based animation
+    const revealElements = document.querySelectorAll('.scroll-reveal');
+
+    function revealOnScroll() {
+      const windowHeight = window.innerHeight;
+      revealElements.forEach((el) => {
+        const top = el.getBoundingClientRect().top;
+        if (top < windowHeight - 100) {
+          el.classList.add('revealed');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
+</body>
+
+</html>

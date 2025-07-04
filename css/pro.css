@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #d3e9ff;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* ---------------- NAVIGATION ----------------- */
+nav {
+  background-color: #1f1f1f;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #00bcd4;
+  transition: transform 0.3s ease;
+}
+
+nav h1:hover {
+  transform: scale(1.05);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+  color: #00bcd4;
+  transform: scale(1.05);
+}
+
+/* -------------------- PROJECTS SECTION -------------------- */
+.projects-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.projects-section h2 {
+  font-size: 2.5rem;
+  color: #222;
+  margin-bottom: 2rem;
+}
+
+/* Project Card Container */
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Individual Card */
+.project-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 300px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Section */
+.project-image {
+  width: 100%;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+/* Content Section */
+.project-content {
+  padding: 1.5rem;
+  text-align: left;
+  flex: 1;
+}
+
+.project-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.project-content p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+
+.project-btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #00bcd4;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.project-btn:hover {
+  background-color: #0097a7;
+}
+
+/* -------------------- FOOTER -------------------- */
+footer {
+  background: #1f1f1f;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: 4rem;
+}
+
+/*-------------------- BACKGROUND ANIMATION --------------------*/
+.bg-animation {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at center, #50e0f3, #d490ff, #ff689b);
+  background-size: 200% 200%;
+  animation: gradientMove 15s ease infinite;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  transition: background-position 0.1s ease;
+  filter: blur(30px) opacity(0.6);
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* -------------------- SCROLL ANIMATION -------------------- */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .projects-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}

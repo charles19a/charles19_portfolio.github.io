@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Charles A | Portfolio</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- Animated Background -->
+  <div class="bg-animation">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <h1>Charles A</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Intro -->
+  <main>
+    <section class="intro">
+      <h2>Hi, I'm Charles 👋</h2>
+      <p>Aspiring Python Developer | Data Enthusiast</p>
+      <a href="/images/Charlesresume (1).pdf" download class="btn">Download Resume</a>
+    </section>
+
+    <!-- Skills Section with Images -->
+    <section class="skills-section">
+      <h2 class="section-title">My Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <img src="images/django.png" alt="Django">
+          <p>Django</p>
+        </div>
+        <div class="skill-card">
+           <img src="images/javascript.png" alt="Django">
+          <p>JavaScript</p>
+        </div>
+        <div class="skill-card">
+          <img src="images/html.png" alt="Django">
+          <p>HTML</p>
+        </div>
+        <div class="skill-card">
+          <img src="images/java.png" alt="Django">
+          <p>Java</p>
+        </div>
+        <div class="skill-card">
+          <img src="images/flask.png" alt="Flask">
+          <p>Flask</p>
+        </div>
+        <div class="skill-card">
+          <img src="images/mysql.png" alt="MySQL">
+          <p>MySQL</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Charles A</p>
+  </footer>
+
+  <!-- Animation Script -->
+  <script>
+    document.addEventListener('mousemove', (e) => {
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+      document.querySelectorAll('.bg-animation span').forEach((blob, index) => {
+        blob.style.transform = `translate(${x * 40 * (index + 1)}px, ${y * 40 * (index + 1)}px)`;
+      });
+    });
+  </script>
+</body>
+</html>

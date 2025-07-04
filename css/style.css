@@ -1,0 +1,225 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(120deg, #f0f2f5, #dfe9f3);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+  background-color: #1f1f1f;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav h1 {
+  font-size: 1.5rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #00bcd4;
+}
+
+/* Intro Section */
+.intro {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  background: url('../images/hero-bg.svg') no-repeat center center/cover;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.intro h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.intro p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #444;
+}
+
+/* Button */
+.btn {
+  background: #00bcd4;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
+}
+
+.btn:hover {
+  background: #0097a7;
+  box-shadow: 0 6px 20px rgba(0, 151, 167, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+  background: #1f1f1f;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: 3rem;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*/* === Glowing Animated Blobs === */
+.bg-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bg-animation span {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.6;
+  animation: floatBlob 20s ease-in-out infinite alternate;
+}
+
+.bg-animation span:nth-child(1) {
+  width: 400px;
+  height: 400px;
+  background: #00bcd4;
+  top: 10%;
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.bg-animation span:nth-child(2) {
+  width: 300px;
+  height: 300px;
+  background: #6a1b9a;
+  top: 60%;
+  left: 10%;
+  animation-delay: 3s;
+}
+
+.bg-animation span:nth-child(3) {
+  width: 500px;
+  height: 500px;
+  background: #ff4081;
+  top: 30%;
+  left: 70%;
+  animation-delay: 6s;
+}
+
+.bg-animation span:nth-child(4) {
+  width: 350px;
+  height: 350px;
+  background: #4caf50;
+  top: 80%;
+  left: 50%;
+  animation-delay: 9s;
+}
+
+@keyframes floatBlob {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(-60px, -80px) scale(1.2);
+  }
+}
+.skills-section {
+  padding: 2rem;
+  text-align: center;
+  animation: fadeIn 1.5s ease;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 1rem;
+}
+
+.skill-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+
+.skill-card img,
+.skill-card i {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+  color: #00bcd4;
+}
+
+.skill-card p {
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
